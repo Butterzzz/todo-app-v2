@@ -29,11 +29,19 @@ function App() {
     }))
   }
 
+  const resetTodoHandler = () => {
+    setTodos([])
+  }
+
+  const deleteCompletedTpdpsHandler = () => {
+    setTodos(todos.filter((todo) => !todo.isComplited))
+  }
+
   return (
     <div className="App">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
-      <TodosActions />
+      <TodosActions resetTodos={resetTodoHandler} deleteComplitedTodos={deleteCompletedTpdpsHandler} />
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
