@@ -41,7 +41,10 @@ function App() {
     <div className="App">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
-      <TodosActions resetTodos={resetTodoHandler} deleteComplitedTodos={deleteCompletedTpdpsHandler} />
+      {!!todos.length > 0 && <TodosActions
+        resetTodos={resetTodoHandler}
+        deleteComplitedTodos={deleteCompletedTpdpsHandler}
+      />}
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
