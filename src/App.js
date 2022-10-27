@@ -53,6 +53,7 @@ function App() {
         deleteTodo={deleteTodoHandler}
         toggleTodo={toggleTodoHandler}
       />
+      {completedTodosCount >0 && <h2>{`У вас ${completedTodosCount} ${completedTodosCount > 1 ? "завершенных задачи" : "завершенная задача"}`}</h2>}
     </div>
   );
 }
