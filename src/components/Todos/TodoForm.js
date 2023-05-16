@@ -1,25 +1,34 @@
-import { useState } from 'react';
 import styles from './TodoForm.module.css';
 import Button from "../UI/Button";
 
-function TodoForm({ addTodo }) {
-    const [text, setText] = useState('');
+function TodoForm({ addTodo, text, setText }) {
 
     const onSubmitHandler = (evt) => {
         evt.preventDefault();
-        addTodo(text);
-        setText('');
+        if (text.trim() !== '') {
+            addTodo(text);
+            setText('');
+        }
     }
 
     return (
         <div className={styles.todoFormContainer}>
             <form onSubmit={onSubmitHandler}>
+
                 <input
                     placeholder="Новая задача"
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                 />
-                <Button type="submit" title="Добавить">Добавить</Button>
+
+                <Button
+                    type="submit"
+                    title="Добавить"
+                    disabled={text.trim() === ''}
+                >
+                    Добавить
+                </Button>
+
             </form>
         </div>
     )
