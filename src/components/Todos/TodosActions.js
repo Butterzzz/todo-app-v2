@@ -22,7 +22,7 @@ function TodosActions({ isComplited }) {
             <Button
                 title="Удалить выполненные задачи"
                 onClick={() => dispatch(deleteCompletedTodos({ isComplited }))}
-                disabled={todos.filter((todo) => todo.isComplited).length === 0}
+                disabled={todos.filter((todo) => todo.isCompleted).length === 0}
             >
                 < RiDeleteBin2Line />
             </Button>
