@@ -14,11 +14,11 @@ function Todo({ id, text, isCompleted }) {
 
             <RiDeleteBin2Line
                 className={styles.deleteIcon}
-                onClick={() => dispatch(deleteTodo({id}))} />
-                
+                onClick={() => dispatch(deleteTodo({ id }))} />
+
             <FaCheck
                 className={styles.checkIcon}
-                onClick={() => dispatch(toggleTodo({id}))} />
+                onClick={() => dispatch(toggleTodo({ id }))} />
         </div>
     )
 }

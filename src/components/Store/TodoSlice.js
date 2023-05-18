@@ -25,7 +25,7 @@ const todoSlice = createSlice({
         },
 
         deleteAllTodo(state) {
-            state.todos = [];
+            state.todos.length = [];
         },
 
         deleteCompletedTodos(state) {

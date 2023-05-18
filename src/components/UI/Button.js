@@ -1,12 +1,16 @@
 import styles from './Button.module.css';
+import { useSelector } from 'react-redux';
+import { selectTheme } from '../../components/Store/ThemeSlice';
 
 function Button(props) {
-    const { children, disabled = false } = props
+    const theme = useSelector(selectTheme);
+    const { children, disabled = false, buttonType } = props;
+    const buttonClassName = `${styles.button} ${styles[theme]} ${styles[buttonType]}`;
 
     return (
         <button
             {...props}
-            className={styles.button}
+            className={buttonClassName}
             disabled={disabled}
         >
             {children}
