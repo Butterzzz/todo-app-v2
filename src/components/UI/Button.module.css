@@ -1,8 +1,10 @@
 .button {
-    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50px;
     cursor: pointer;
-    background-color: beige;
+    background-color: rgba(0, 0, 0, 0.06);
     font-size: 1.5rem;
     padding: 10px 15px;
     border: none;
@@ -11,10 +13,51 @@
 }
 
 .button:hover {
-    background-color: rgb(240, 240, 155);
+    background-color: rgba(0, 0, 0, 0.12);
 }
 
 .button[disabled] {
     cursor: default;
     pointer-events: none;
+}
+
+.dark {
+    color: #d6d6d6;
+    background-color: #2d2e31;
+}
+
+.dark svg {
+    color: #d6d6d6;
+}
+
+.dark:disabled svg {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.dark:disabled {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.dark:hover {
+    color: #e7e7e7;
+    background-color: #3B3C3F;
+}
+
+.toggleButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    color: #000;
+    border: 0;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+.toggleButton:hover {
+    cursor: pointer;
 }
